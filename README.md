@@ -4,10 +4,9 @@ lowercase everything
 identify length of characters
 -identify smallest closest square root of char length
 
--to find a remainder: take the closest square, then square it, subtract from the character length 
-
+<!-- -to find a remainder: take the closest square, then square it, subtract from the character length 
 if there is a remainder on the sqrt then an addtl row will be addedlengthFinder()
--add addtl "row" if there is a remainder
+-add addtl "row" if there is a remainder -->
 
 HARD STUFF: 
 
@@ -72,11 +71,59 @@ Expected Output: 15
 
 Describe: characterSquare()
 
-Test: "It should return the square root of a given number."
+Test: "If the number is a perfect square, it should return true."
 Code:
-let number = 16
+const number = 16
+characterSquare(number);
+Expected Output:true
+
+Test: "If the number is not a perfect square, it should return false."
+Code:
+const number = 17
+characterSquare(number);
+Expected Output:false
+
+Test: "If the number is a perfect square, it should return the square root of a given number."
+Code:
+const number = 16
 characterSquare(number);
 Expected Output: 4
 
-Test: "It should return only the smallest square that is "
+Test: "If the given number is not a perfect square,It should return the smallest square root that is larger than the number of characters."
+Code:
+const number = 17
+characterSquare(number);
+Expected Output: 5
 
+
+Describe squareBuilder();
+
+Test: "It should return a string that's passed into it as an argument." 
+Code:
+const text = "aaaabbbbccccdddd";
+squareBuilder(text);
+Expected Output: 'aaaabbbbccccdddd'
+
+Test: "It should take a number and string and return the number and the string"
+Code:
+const text = "aaaabbbbccccdddd";
+const number = 16
+squareBuilder(text, number);
+Expected Output: ['aaaabbbbccccdddd', 16]
+
+Test: "It should return an array with each character in the text concatenated with an incrementing number."
+Code:
+const text = "aabb";
+const number = 4
+squareBuilder(text, number);
+Expected Output: ['a0', 'a1', 'b2', 'b3'] 
+
+Test: "It should return an array with each character in the text concatenated with a number that coresponds to it's position in the crypto square. 
+Code:
+const text = "aabb";
+const number = 2
+squareBuilder(text, number);
+Expected Output: ['a0', 'b2', 'a1', 'b3'] 
+
+
+Describe
