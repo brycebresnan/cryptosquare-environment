@@ -1,0 +1,3 @@
+.dist/
+.DS-store
+node_modules/
